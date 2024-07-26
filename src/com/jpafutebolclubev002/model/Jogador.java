@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @SequenceGenerator(name = "seq_tbjogador", sequenceName = "seq_tbjogador", initialValue = 1)
 public class Jogador extends EntidadeGenerica {
     @Id
-    @GeneratedValue(generator = "seq_tbjogador",strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "seq_tbjogador", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
     private String posicao;
