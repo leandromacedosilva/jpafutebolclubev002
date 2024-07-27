@@ -37,6 +37,19 @@ public class JogadorDAO {
         }
     }
     
+    // atualizar informacoes do jogador
+    public void atualizar(Jogador jogador) {
+        try {
+        EntityManager em = JpaUtil.openConnection();
+        em.getTransaction().begin();
+        em.merge(jogador);
+        em.flush();
+        em.getTransaction().commit();
+        } finally {
+        JpaUtil.closeConnectiton();
+        }
+    }
+    
     // consultar jogador pelo codigo
     public Jogador consulta(Long id) {
         EntityManager em = JpaUtil.openConnection();

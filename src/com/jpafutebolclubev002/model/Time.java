@@ -2,6 +2,7 @@ package com.jpafutebolclubev002.model;
 
 import com.jpafutebolclubev002.generic.EntidadeGenerica;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +23,7 @@ public class Time extends EntidadeGenerica {
     @GeneratedValue(generator = "seq_tbtime", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Jogador> jogadores;
 
     public Time() {

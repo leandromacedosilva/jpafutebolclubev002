@@ -15,6 +15,7 @@ public class TimeDAO {
     em.getTransaction().begin();
     em.persist(time);
     em.getTransaction().commit();
+            System.out.println("DADOS PERSISTIDOS COM SUCESSO NO BANCO DE DADOS!");
         } finally {
             JpaUtil.closeConnectiton();
         }

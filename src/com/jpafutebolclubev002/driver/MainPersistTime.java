@@ -20,8 +20,8 @@ public class MainPersistTime {
         jogadores.add(jogador001);
         jogadores.add(jogador002);
         
-        JogadorDAO jogadorDAO = new JogadorDAO();
-        jogadorDAO.salvarLista(jogadores);
+        //JogadorDAO jogadorDAO = new JogadorDAO();
+        //jogadorDAO.salvarLista(jogadores);
         
         Time time001 = new Time();
         time001.setNome("Tabajara FC");
