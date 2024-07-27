@@ -41,6 +41,8 @@ select * from tbcontact;
 drop table tbhardware_tbprovider;
 --------------------------------------------------
 stop in
+Implementando EnderecoDAO, AtividadeDAO
+
 GenericDAO em PessoaController
 00:10:59
 Serviço Genérico - Estruturando o Projeto
