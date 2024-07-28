@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class MainPersistJogador {
     public static void main(String[] args) {
-        Jogador jogador001 = new Jogador("Samuel", "Atacante");
-        Jogador jogador002 = new Jogador("Raimundo", "Zagueiro");
-        Jogador jogador003 = new Jogador("Arthur", "Lateral direito");
-        Jogador jogador004 = new Jogador("Kalbi", "Meia esquerda");
-        Jogador jogador005 = new Jogador("Leandro", "Atacante");
+        Jogador jogador001 = new Jogador("Samuel", "007.657.543-09", "Atacante");
+        Jogador jogador002 = new Jogador("Raimundo", "347.098.098-88", "Zagueiro");
+        Jogador jogador003 = new Jogador("Arthur", "984.876.112-11", "Lateral direito");
+        Jogador jogador004 = new Jogador("Kalbi", "452.445.231-76", "Meia esquerda");
+        Jogador jogador005 = new Jogador("Leandro", "803.665.723-43", "Atacante");
         
         List<Jogador> jogadores = new ArrayList<>();
         jogadores.add(jogador001);

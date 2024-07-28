@@ -33,6 +33,9 @@ public class JogadorForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         tfPosicao = new javax.swing.JTextField();
         btnGravar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        tfCpf = new javax.swing.JTextField();
+        btnConsult = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +56,21 @@ public class JogadorForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("CPF:");
+
+        tfCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCpfActionPerformed(evt);
+            }
+        });
+
+        btnConsult.setText("Consultar");
+        btnConsult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,14 +78,19 @@ public class JogadorForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGravar)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tfNome)
-                        .addComponent(tfPosicao, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGravar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnConsult)
+                        .addGap(45, 45, 45))
+                    .addComponent(tfNome)
+                    .addComponent(tfPosicao, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(tfCpf))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -77,13 +100,19 @@ public class JogadorForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tfPosicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(btnGravar)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGravar)
+                    .addComponent(btnConsult))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
@@ -95,11 +124,24 @@ public class JogadorForm extends javax.swing.JFrame {
 
     private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
         // TODO add your handling code here:
-        JogadorController jogadorController = new JogadorController();
-        jogadorController.getJogador().setNome(tfNome.getText());
-        jogadorController.getJogador().setPosicao(tfPosicao.getText());
-        jogadorController.salvar();
+//        JogadorController jogadorController = new JogadorController();
+//        jogadorController.getJogador().setNome(tfNome.getText());
+//        jogadorController.getJogador().setCpf(tfCpf.getText());
+//        jogadorController.getJogador().setPosicao(tfPosicao.getText());
+//        jogadorController.salvar();
+          JogadorController jogadorController = new JogadorController();
+          jogadorController.salvar(tfNome.getText(), tfCpf.getText(), tfPosicao.getText());
     }//GEN-LAST:event_btnGravarActionPerformed
+
+    private void tfCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCpfActionPerformed
+
+    private void btnConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultActionPerformed
+        // TODO add your handling code here:
+        JogadorController jogadorController = new JogadorController();
+        jogadorController.consultAll();
+    }//GEN-LAST:event_btnConsultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,9 +179,12 @@ public class JogadorForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsult;
     private javax.swing.JButton btnGravar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField tfCpf;
     private javax.swing.JTextField tfNome;
     private javax.swing.JTextField tfPosicao;
     // End of variables declaration//GEN-END:variables

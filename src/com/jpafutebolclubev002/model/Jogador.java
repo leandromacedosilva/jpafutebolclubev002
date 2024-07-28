@@ -20,18 +20,21 @@ public class Jogador extends EntidadeGenerica {
     @GeneratedValue(generator = "seq_tbjogador", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
+    private String cpf;
     private String posicao;
     
     public Jogador() {}
 
-    public Jogador(String nome, String posicao) {
+    public Jogador(String nome, String cpf, String posicao) {
         this.nome = nome;
+        this.cpf = cpf;
         this.posicao = posicao;
     }
 
-    public Jogador(Long id, String nome, String posicao) {
+    public Jogador(Long id, String nome, String cpf, String posicao) {
         this.id = id;
         this.nome = nome;
+        this.cpf = cpf;
         this.posicao = posicao;
     }
 
@@ -50,6 +53,16 @@ public class Jogador extends EntidadeGenerica {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    
+    
 
     public String getPosicao() {
         return posicao;
