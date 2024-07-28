@@ -41,6 +41,8 @@ select * from tbcontact;
 drop table tbhardware_tbprovider;
 --------------------------------------------------
 stop in
+Controller - Implementando PessoaController
+
 Implementando EnderecoDAO, AtividadeDAO
 
 GenericDAO em PessoaController
