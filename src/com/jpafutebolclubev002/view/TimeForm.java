@@ -4,7 +4,9 @@
  */
 package com.jpafutebolclubev002.view;
 
+import com.jpafutebolclubev002.controller.JogadorController;
 import com.jpafutebolclubev002.controller.TimeController;
+import com.jpafutebolclubev002.util.Caracter;
 
 /**
  *
@@ -198,8 +200,22 @@ public class TimeForm extends javax.swing.JFrame {
 
     private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
         // TODO add your handling code here:
+        JogadorController jogadorController = new JogadorController();
+        jogadorController.getJogador().setNome(tfNome001.getText());
+        jogadorController.getJogador().setCpf(Caracter.caracterRemove(tfCpf001.getText()));
+        jogadorController.getJogador().setPosicao(tfPosicao001.getText());
+        
+        jogadorController.getJogador().setNome(tfNome002.getText());
+        jogadorController.getJogador().setCpf(Caracter.caracterRemove(tfCpf002.getText()));
+        jogadorController.getJogador().setPosicao(tfPosicao002.getText());
+        
+        jogadorController.getJogador().setNome(tfNome003.getText());
+        jogadorController.getJogador().setCpf(Caracter.caracterRemove(tfCpf003.getText()));
+        jogadorController.getJogador().setPosicao(tfPosicao003.getText());
+        
         TimeController timeController = new TimeController();
         timeController.getTime().setNome(tfNomeTime.getText());
+        timeController.salvar();
     }//GEN-LAST:event_btnGravarActionPerformed
 
     private void tfNomeTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeTimeActionPerformed
