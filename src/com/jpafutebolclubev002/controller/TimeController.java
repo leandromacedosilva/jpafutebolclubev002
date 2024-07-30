@@ -26,7 +26,7 @@ public class TimeController {
         timeDAO.save(time);
     }
     
-    public void salvar(String nome, List<Jogador> jogadores, String posicao) {
+    public void salvarList(String nome, List<Jogador> jogadores, String posicao) {
         //JogadorDAO jogadorDAO = new JogadorDAO();
         time.setNome(nome);
         jogador.setNome(nome);

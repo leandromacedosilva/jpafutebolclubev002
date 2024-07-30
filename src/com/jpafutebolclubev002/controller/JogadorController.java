@@ -11,11 +11,11 @@ import javax.swing.JOptionPane;
  */
 public class JogadorController {
     private Jogador jogador;
-    private GenericDAO<Jogador> jogadorDAO;
+    private final GenericDAO<Jogador> jogadorDAO;
     
     public JogadorController() {
         jogador = new Jogador();
-        jogadorDAO = new GenericDAO<Jogador>(Jogador.class);
+        jogadorDAO = new GenericDAO<>(Jogador.class);
     }
     
     public void salvar() {
